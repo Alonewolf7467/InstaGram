@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Data Extractor Pro</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <header>
+    <h1>Instagram Data Extractor Pro</h1>
+  </header>
+  
+  <div class="tab-container">
+    <div class="tabs">
+      <button class="tab active" data-tab="main">Main</button>
+      <button class="tab" data-tab="history">History</button>
+      <button class="tab" data-tab="settings">Settings</button>
+      <button class="tab" data-tab="help">Help</button>
+    </div>
+    
+    <div class="tab-content">
+      <!-- Main Tab -->
+      <div class="tab-pane active" id="main">
+        <div class="status-container">
+          <div id="status-message">Ready to extract data</div>
+        </div>
+        
+        <div class="extract-section">
+          <button id="extract-button" class="primary-button">Extract Data (Alt+I)</button>
+        </div>
+        
+        <div class="last-extraction">
+          <h3>Last Extracted Data</h3>
+          <div id="last-extraction-details">
+            <div class="no-data">No data extracted yet</div>
+          </div>
+        </div>
+        
+        <div class="format-section">
+          <h3>Format Options</h3>
+          <div class="format-buttons">
+            <button id="copy-tab" class="format-button">Copy Tab-Separated</button>
+            <button id="copy-csv" class="format-button">Copy CSV</button>
+            <button id="copy-pipe" class="format-button">Copy Pipe-Separated</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- History Tab -->
+      <div class="tab-pane" id="history">
+        <div class="history-controls">
+          <button id="export-history" class="format-button">Export All Data</button>
+          <button id="clear-history" class="danger-button">Clear History</button>
+        </div>
+        
+        <div class="history-list">
+          <h3>Extraction History</h3>
+          <div id="history-container">
+            <div class="no-data">No extraction history</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Settings Tab -->
+      <div class="tab-pane" id="settings">
+        <div class="settings-form">
+          <div class="setting-group">
+            <label for="identifier-name">Identified By:</label>
+            <input type="text" id="identifier-name" placeholder="Enter your name">
+            <button id="save-name" class="primary-button">Save Name</button>
+          </div>
+          
+          <div class="setting-group">
+            <h3>Extraction Options</h3>
+            <div class="checkbox-setting">
+              <input type="checkbox" id="auto-copy" checked>
+              <label for="auto-copy">Automatically copy to clipboard</label>
+            </div>
+            <div class="checkbox-setting">
+              <input type="checkbox" id="default-tab-format" checked>
+              <label for="default-tab-format">Use tab-separated format by default</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Help Tab -->
+      <div class="tab-pane" id="help">
+        <div class="help-content">
+          <h3>How to Use</h3>
+          <ol>
+            <li>Navigate to any Instagram post or reel</li>
+            <li>Press <kbd>Alt+I</kbd> or click the "Extract Data" button</li>
+            <li>Data will be copied to clipboard automatically</li>
+            <li>Paste data into your spreadsheet</li>
+          </ol>
+          
+          <h3>Output Format</h3>
+          <p>Default format (tab-separated):</p>
+          <pre>URL
+Username    Likes    Identified By</pre>
+          
+          <h3>Keyboard Shortcuts</h3>
+          <ul>
+            <li><kbd>Alt+I</kbd>: Extract data from current post</li>
+            <li><kbd>Alt+E</kbd>: Open extension popup</li>
+          </ul>
+          
+          <h3>Troubleshooting</h3>
+          <p>If data extraction fails:</p>
+          <ul>
+            <li>Make sure you're on an Instagram post or reel page</li>
+            <li>Try refreshing the page</li>
+            <li>Check if Instagram has updated their UI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="version">v1.0.0</div>
+  </footer>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

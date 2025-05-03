@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Instagram Data Extractor Pro - Options</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --warning-color: #fbbc05;
+            --error-color: #ea4335;
+            --text-color: #333;
+            --background-color: #fff;
+            --border-color: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .options-section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #3367d6;
+        }
+
+        .btn-secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e8e8e8;
+        }
+
+        .btn-danger {
+            background-color: var(--error-color);
+        }
+
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--primary-color);
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px var(--primary-color);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .card {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .tip {
+            background-color: #e8f4fd;
+            padding: 12px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .tip h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Instagram Data Extractor Pro</h1>
+            <p>Configure your data extraction preferences</p>
+        </header>
+
+        <div class="options-section">
+            <h2>General Settings</h2>
+
+            <div class="form-group">
+                <label for="identifier-name">Identified By Name:</label>
+                <input type="text" id="identifier-name" placeholder="Enter your name">
+                <p class="note">This name will be included with each extraction to identify who collected the data.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="output-format">Data Output Format:</label>
+                <select id="output-format">
+                    <option value="tab">Tab Separated (Excel-friendly)</option>
+                    <option value="pipe">Pipe Separated</option>
+                    <option value="csv">CSV Format</option>
+                </select>
+                <p class="note">Choose how your data will be formatted when copied or exported.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="history-limit">History Limit:</label>
+                <input type="number" id="history-limit" min="10" max="500" step="10" value="100">
+                <p class="note">Maximum number of items to keep in extraction history (10-500).</p>
+            </div>
+        </div>
+
+        <div class="options-section">
+            <h2>Behavior Settings</h2>
+
+            <div class="form-group">
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="notifications-enabled" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>Enable Desktop Notifications</span>
+                </div>
+                <p class="note">Show notifications when data is extracted or copied.</p>
+            </div>
+
+            <div class="form-group">
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="auto-extract">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Auto-extract when navigating to posts</span>
+                </div>
+                <p class="note">Automatically extract data when you open an Instagram post or reel.</p>
+            </div>
+
+            <div class="form-group">
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="auto-copy">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Auto-copy data after extraction</span>
+                </div>
+                <p class="note">Automatically copy data to clipboard after extraction.</p>
+            </div>
+        </div>
+
+        <div class="tip">
+            <h4>Pro Tip!</h4>
+            <p>Use keyboard shortcuts to speed up your workflow:</p>
+            <ul>
+                <li><strong>Alt+I</strong>: Extract data from current Instagram post/reel</li>
+                <li><strong>Alt+E</strong>: Open extension popup</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <button id="save-btn" class="btn">Save Settings</button>
+            <button id="reset-btn" class="btn btn-secondary">Reset to Default</button>
+        </div>
+
+        <div id="status-message" class="status"></div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

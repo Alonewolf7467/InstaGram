@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Data Extractor Pro",
+  "version": "1.2",
+  "description": "Advanced tool to extract usernames, like counts, and metadata from Instagram posts and reels",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "clipboardWrite",
+    "commands",
+    "contextMenus",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.instagram.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "commands": {
+    "extract-data": {
+      "suggested_key": {
+        "default": "Alt+I"
+      },
+      "description": "Extract data from Instagram"
+    },
+    "open-popup": {
+      "suggested_key": {
+        "default": "Alt+E"
+      },
+      "description": "Open extension popup"
+    }
+  },
+  "options_page": "options.html"
+}
